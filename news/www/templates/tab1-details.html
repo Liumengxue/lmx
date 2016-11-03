@@ -1,0 +1,11 @@
+<ion-view title="{{title}}" cache-view="false" hide-nav-bar="false">
+ <ion-nav-back-button class="button-icon">
+    </i>{{getPreviousTitle() || 'Back'}}
+  </ion-nav-back-button>
+<ion-content class="padding">
+<div  class="body" ng-bind-html="item.body"></div>
+</ion-content>
+    <div class="bottom-right">
+        <button class="button button-icon  icon ion-more" ng-click="favorite()"></button>
+    </div>
+</ion-view>

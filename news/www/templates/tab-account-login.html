@@ -1,0 +1,136 @@
+<ion-view view-title="登录">
+ <!-- item-input-inset -->
+<div class="bar bar-header bar-positive">
+  <h1 class="title">登录</h1>
+  <button class="button button-clear icon-right ion-close" ng-click="modal.hide()"><tton>
+</div>
+
+
+<ion-content class="has-header">
+
+
+<ion-slide-box class="has-header" delegate-handle="accountSlide" 
+  show-pager="0" on-slide-changed="AccountSlideChanged($index)">
+
+
+<!-- 登录 -->
+
+  <ion-slide>
+
+
+<div class="list list-inset">
+
+
+  <div class="text-center">
+
+   <img src="img/我 (1).png" alt="" width="30%" height="30%">
+
+  </div>
+   
+
+
+  <label class="item item-input">
+   <i class="icon ion-person placeholder-icon"></i>
+    <input type="text" ng-model="loginData.username" placeholder="账号">
+  </label>
+
+
+
+  <label class="item item-input">
+  <i class="icon ion-ios-unlocked placeholder-icon"></i>
+    <input type="password" ng-model="loginData.password" placeholder="密码">
+  </label>
+
+
+
+  <div class="text-center">
+<button class="button button-full button-positive" ng-click="login()">
+  登录
+<tton>
+
+</div>
+
+
+
+</div>
+
+   
+  </ion-slide><!--登录结束 -->
+
+
+<!-- 注册 -->
+
+  <ion-slide>
+   
+
+
+
+
+
+<div class="list list-inset">
+
+
+  <div class="text-center">
+
+   <img src="img/我 (1).png" alt="" width="30%" height="30%">
+
+  </div>
+   
+
+
+  <label class="item item-input">
+   <i class="icon ion-person placeholder-icon"></i>
+    <input type="text" ng-model="regData.name" placeholder="账号">
+  </label>
+
+  <label class="item item-input">
+   <i class="icon ion-email placeholder-icon"></i>
+    <input type="text" ng-model="regData.email" placeholder="邮箱">
+  </label>
+
+
+  <label class="item item-input">
+  <i class="icon ion-ios-unlocked placeholder-icon"></i>
+    <input type="password" ng-model="regData.password" placeholder="密码">
+  </label>
+
+
+
+  <div class="text-center">
+<button class="button button-full button-positive" ng-click="register()">
+  注册
+<tton>
+
+</div>
+
+
+
+</div>
+
+
+
+  </ion-slide><!-- 注册结束 -->
+  
+</ion-slide-box>
+
+
+
+
+</ion-content>
+
+
+
+<ion-tabs  delegate-handle="accountTab" class="tabs-background-light tabs-color-positive tabs-striped tabs-top">
+
+  <ion-tab title="登录" on-select="accountselectTab(0)">
+  </ion-tab>
+
+  <ion-tab title="注册" on-select="accountselectTab(1)">
+  </ion-tab>
+
+
+</ion-tabs>
+
+
+
+</ion-view>

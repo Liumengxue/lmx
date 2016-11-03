@@ -1,0 +1,23 @@
+<ion-view view-title="健康">
+  <ion-slide-box show-pager="false" delegate-handle="slide1" on-slide-changed="slideChanged($index)">
+    <ion-slide ng-repeat="slide in slides">
+    
+      <ion-content>
+        <ion-refresher pulling-text="下拉刷新" on-refresh="slide.doRefresh()"></ion-refresher>
+        <div class="list has-header">
+          <a ng-repeat="item in slide.items" class="item item-thumbnail-right item-text-wrap" ng-click="goDetails(item,'{{slide.type}}')">
+            <img ng-src="{{imgUrl+item.img}}" width="30" height="30" alt="">
+            <h3>{{::item.title}}</h3>
+            <p>{{::item.body | substring:item.body}}</p>
+          </a> 
+        </div>
+        <ion-infinite-scroll ng-if="!slide.isload" on-infinite="slide.loadMore()" distance="1%">
+        </ion-infinite-scroll>
+      </ion-content>
+      
+    </ion-slide>
+  </ion-slide-box>
+  <ion-tabs delegate-handle="tab1" id="{{currentTabId}}" class="tabs-striped tabs-top">
+    <ion-tab ng-repeat="item in tabs" on-select="selectedTab($index)" title="{{item.name}}"></ion-tab>
+  </ion-tabs>
+</ion-view>
