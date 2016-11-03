@@ -1,1 +1,2 @@
-# lmx就就会呼呼
+# lmx
+Hi github
